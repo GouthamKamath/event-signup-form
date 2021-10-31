@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Signup form</title>
+</head>
+<body>
+    <main class="form-signin">
+        <form action="/" method="POST">
+          <img class="mb-4" src="./images/business_logo.png" alt="" width="125" height="125">
+          <h1 class="h3 mb-3 fw-normal">Signup to volunteer.</h1>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="name" name="fullname" placeholder="Full Name" required>
+            <label for="name">Full Name</label>
+          </div>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+            <label for="email">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="floatingPassword" name="cnfpassword" placeholder="Confirm Password" required>
+            <label for="floatingPassword">Confirm Password</label>
+          </div>
+        
+          <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="saveUserData()">Go!</button>
+          <p class="mt-5 mb-3 text-muted">Rubic corner © 2017–2021</p>
+        </form>
+      </main>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script>
+          const name = document.getElementById('name');
+          const email= document.getElementById('email');
+          function saveUserData(){
+              localStorage.setItem('fullname',name.value);
+              localStorage.setItem('email',email.value);
+          }
+      </script>
+</body>
+</html>
